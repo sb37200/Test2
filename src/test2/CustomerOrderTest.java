@@ -37,6 +37,15 @@ public class CustomerOrderTest {
 	// Add an item to the order, pay using a method, and verify that the order is
 	// marked as paid.
 
+	  @Test
+		public void testPayOrder() {
+		    order.addItem("Cheese Pizza", 10.00);
+		    order.pay("Credit Card");
+		    assertTrue(order.isPaid());
+		    assertEquals(10.00, order.getTotalAmount(), 0.01);
+		}
+
+	  
 	// ToDo: Test inventory update when an order is placed
 	// Add an item to the order and reduce its stock. Verify that the inventory
 	// count is updated correctly.
